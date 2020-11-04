@@ -23,3 +23,9 @@ services:
       ports:
         - 8888:8888
       container_name: datascience-notebook-container
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: monitoring_node_exporter
+    restart: unless-stopped
+    ports:
+      - "9100:9100"
